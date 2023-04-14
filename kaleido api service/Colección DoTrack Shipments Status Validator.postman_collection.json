@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "51ccb71c-f1c7-4038-9c83-92058645738c",
+		"name": "Colección DoTrack Shipments Status Validator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26034486"
+	},
+	"item": [
+		{
+			"name": "Constructor de Contrato",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic dTFy...",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"input\": {\r\n    \"abi\": [\r\n      {\r\n        \"anonymous\": false,\r\n        \"inputs\": [\r\n          {\r\n            \"anonymous\": false,\r\n            \"inputs\": [\r\n              {\r\n                \"indexed\": false,\r\n                \"internalType\": \"uint256\",\r\n                \"name\": \"SHid\",\r\n                \"type\": \"uint256\"\r\n              },\r\n              {\r\n                \"indexed\": false,\r\n                \"internalType\": \"enum DotrackShipmentStatus.Status\",\r\n                \"name\": \"status\",\r\n                \"type\": \"uint8\"\r\n              },\r\n              {\r\n                \"indexed\": false,\r\n                \"internalType\": \"string\",\r\n                \"name\": \"metadata\",\r\n                \"type\": \"string\"\r\n              },\r\n              {\r\n                \"indexed\": false,\r\n                \"internalType\": \"address\",\r\n                \"name\": \"author\",\r\n                \"type\": \"address\"\r\n              }\r\n            ],\r\n            \"name\": \"RegisteredStep\",\r\n            \"type\": \"event\"\r\n          },\r\n          {\r\n            \"inputs\": [\r\n              {\r\n                \"internalType\": \"uint256\",\r\n                \"name\": \"\",\r\n                \"type\": \"uint256\"\r\n              },\r\n              {\r\n                \"internalType\": \"uint256\",\r\n                \"name\": \"\",\r\n                \"type\": \"uint256\"\r\n              }\r\n            ],\r\n            \"name\": \"SHvalidator\",\r\n            \"outputs\": [\r\n              {\r\n                \"internalType\": \"enum DotrackShipmentStatus.Status\",\r\n                \"name\": \"status\",\r\n                \"type\": \"uint8\"\r\n              },\r\n              {\r\n                \"internalType\": \"string\",\r\n                \"name\": \"metadata\",\r\n                \"type\": \"string\"\r\n              }\r\n            ],\r\n            \"stateMutability\": \"view\",\r\n            \"type\": \"function\"\r\n          },\r\n          {\r\n            \"inputs\": [\r\n              {\r\n                \"internalType\": \"uint256\",\r\n                \"name\": \"SHid\",\r\n                \"type\": \"uint256\"\r\n              }\r\n            ],\r\n            \"name\": \"registerSH\",\r\n            \"outputs\": [\r\n              {\r\n                \"internalType\": \"bool\",\r\n                \"name\": \"success\",\r\n                \"type\": \"bool\"\r\n              }\r\n            ],\r\n            \"stateMutability\": \"nonpayable\",\r\n            \"type\": \"function\"\r\n          },\r\n          {\r\n            \"inputs\": [\r\n              {\r\n                \"internalType\": \"uint256\",\r\n                \"name\": \"SHid\",\r\n                \"type\": \"uint256\"\r\n              },\r\n              {\r\n                \"internalType\": \"string\",\r\n                \"name\": \"metadata\",\r\n                \"type\": \"string\"\r\n              }\r\n            ],\r\n            \"name\": \"registerStep\",\r\n            \"outputs\": [\r\n              {\r\n                \"internalType\": \"bool\",\r\n                \"name\": \"success\",\r\n                \"type\": \"bool\"\r\n              }\r\n            ],\r\n            \"stateMutability\": \"nonpayable\",\r\n            \"type\": \"function\"\r\n          }\r\n        ]\r\n \r\n      }\r\n    ]  \r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://u1my9uxwbm-u1bzt3mvmy-connect.us1-azure.kaleido.io/gateways/u1q2f2qk4l/?kld-from=0xf0afc19d9108b443096f0de4d461093b106b3bcd&kld-sync=true",
+					"protocol": "https",
+					"host": [
+						"u1my9uxwbm-u1bzt3mvmy-connect",
+						"us1-azure",
+						"kaleido",
+						"io"
+					],
+					"path": [
+						"gateways",
+						"u1q2f2qk4l",
+						""
+					],
+					"query": [
+						{
+							"key": "kld-from",
+							"value": "0xf0afc19d9108b443096f0de4d461093b106b3bcd"
+						},
+						{
+							"key": "kld-sync",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar nuevo Shipment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic dTFy...",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"SHid\": \"#idShipment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://u1my9uxwbm-u1bzt3mvmy-connect.us1-azure.kaleido.io/gateways/u1q2f2qk4l/0x234f1cb08b0d05efb8038fd19978a78e212f6cb3/registerSH?kld-from=0xf0afc19d9108b443096f0de4d461093b106b3bcd&kld-sync=true",
+					"protocol": "https",
+					"host": [
+						"u1my9uxwbm-u1bzt3mvmy-connect",
+						"us1-azure",
+						"kaleido",
+						"io"
+					],
+					"path": [
+						"gateways",
+						"u1q2f2qk4l",
+						"0x234f1cb08b0d05efb8038fd19978a78e212f6cb3",
+						"registerSH"
+					],
+					"query": [
+						{
+							"key": "kld-from",
+							"value": "0xf0afc19d9108b443096f0de4d461093b106b3bcd"
+						},
+						{
+							"key": "kld-sync",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validador de Parámetros",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic dTFy...",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"input\": \"#idShipment\",\r\n  \"input1\": \"#status\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://u1my9uxwbm-u1bzt3mvmy-connect.us1-azure.kaleido.io/gateways/u1q2f2qk4l/0x234f1cb08b0d05efb8038fd19978a78e212f6cb3/SHvalidator?kld-from=0xf0afc19d9108b443096f0de4d461093b106b3bcd&kld-sync=true",
+					"protocol": "https",
+					"host": [
+						"u1my9uxwbm-u1bzt3mvmy-connect",
+						"us1-azure",
+						"kaleido",
+						"io"
+					],
+					"path": [
+						"gateways",
+						"u1q2f2qk4l",
+						"0x234f1cb08b0d05efb8038fd19978a78e212f6cb3",
+						"SHvalidator"
+					],
+					"query": [
+						{
+							"key": "kld-from",
+							"value": "0xf0afc19d9108b443096f0de4d461093b106b3bcd"
+						},
+						{
+							"key": "kld-sync",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar nuevo Estado",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic dTFy...",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"SHid\": \"#idShipment\",\r\n  \"metadata\": \"#CIDipfs de json\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://u1my9uxwbm-u1bzt3mvmy-connect.us1-azure.kaleido.io/gateways/u1q2f2qk4l/0x234f1cb08b0d05efb8038fd19978a78e212f6cb3/registerStep?kld-from=0xf0afc19d9108b443096f0de4d461093b106b3bcd&kld-sync=true",
+					"protocol": "https",
+					"host": [
+						"u1my9uxwbm-u1bzt3mvmy-connect",
+						"us1-azure",
+						"kaleido",
+						"io"
+					],
+					"path": [
+						"gateways",
+						"u1q2f2qk4l",
+						"0x234f1cb08b0d05efb8038fd19978a78e212f6cb3",
+						"registerStep"
+					],
+					"query": [
+						{
+							"key": "kld-from",
+							"value": "0xf0afc19d9108b443096f0de4d461093b106b3bcd"
+						},
+						{
+							"key": "kld-sync",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
